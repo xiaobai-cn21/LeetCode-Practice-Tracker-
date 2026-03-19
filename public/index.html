@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>力扣题目搜索</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <h1>力扣题目搜索</h1>
+    <div class="tabs">
+      <button class="tab active" data-tab="search">搜索</button>
+      <button class="tab" data-tab="today">今日复习</button>
+      <button class="tab" data-tab="mine">我的题单</button>
+    </div>
+    <form id="search-form">
+      <input id="query" type="text" placeholder="输入题目关键词（中国版）" />
+      <button type="submit">搜索</button>
+    </form>
+
+    <div class="controls">
+      <label>
+        每页显示
+        <select id="limit">
+          <option value="10">10</option>
+          <option value="20" selected>20</option>
+          <option value="30">30</option>
+          <option value="50">50</option>
+        </select>
+        条
+      </label>
+    </div>
+
+    <div class="table-wrap" data-panel="search">
+      <table class="lc-table">
+        <thead>
+          <tr>
+            <th style="width:80px;">编号</th>
+            <th>标题</th>
+            <th style="width:120px;">难度</th>
+            <th style="width:120px;">通过率</th>
+            <th style="width:120px;">操作</th>
+          </tr>
+        </thead>
+        <tbody id="results"></tbody>
+      </table>
+    </div>
+
+    <div class="pagination">
+      <button id="prev">上一页</button>
+      <span id="page-info"></span>
+      <button id="next">下一页</button>
+    </div>
+
+    <div class="table-wrap" data-panel="today" style="display:none;">
+      <table class="lc-table">
+        <thead>
+          <tr>
+            <th style="width:80px;">编号</th>
+            <th>标题</th>
+            <th style="width:120px;">难度</th>
+            <th style="width:220px;">复习</th>
+          </tr>
+        </thead>
+        <tbody id="today-body"></tbody>
+      </table>
+    </div>
+
+    <div class="table-wrap" data-panel="mine" style="display:none;">
+      <div style="margin-bottom:16px;">
+        <form id="custom-form" style="display:flex;gap:8px;align-items:center;">
+          <input id="custom-title" type="text" placeholder="自定义题目名称" required style="width:180px;" />
+          <input id="custom-link" type="url" placeholder="题目链接（如牛客/洛谷等）" required style="width:320px;" />
+          <button type="submit">添加自定义题目</button>
+        </form>
+      </div>
+      <table class="lc-table">
+        <thead>
+          <tr>
+            <th style="width:80px;">编号</th>
+            <th>标题</th>
+            <th style="width:120px;">难度</th>
+            <th style="width:160px;">下次复习时间</th>
+            <th style="width:120px;">操作</th>
+          </tr>
+        </thead>
+        <tbody id="mine-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="/static/main.js"></script>
+  
+</body>
+</html>
+
+

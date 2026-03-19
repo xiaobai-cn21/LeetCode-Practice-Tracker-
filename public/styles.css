@@ -1,0 +1,73 @@
+:root {
+  /* LeetCode-like light theme */
+  --bg: #f5f7fb;
+  --panel: #ffffff;
+  --text: #1f2937;
+  --muted: #64748b;
+  --accent: #ffa116; /* LeetCode orange */
+  --accent-2: #2db55d; /* AC green */
+  --border: #e5e7eb;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a { color: inherit; text-decoration: none; }
+.lc-table a:hover { color: var(--accent); text-decoration: none; }
+
+.app {
+  max-width: 1080px;
+  margin: 32px auto;
+  padding: 20px 24px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(31,41,55,0.06);
+}
+
+h1 { margin-top: 0; font-size: 28px; }
+
+.tabs { display: flex; gap: 8px; margin: 10px 0 6px; }
+.tab { border: 1px solid var(--border); background: #fff; padding: 8px 12px; border-radius: 8px; cursor: pointer; }
+.tab.active { border-color: var(--accent); background: #fff7e6; }
+
+form { display: flex; gap: 10px; }
+input, select, button {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+}
+button {
+  cursor: pointer;
+  background: var(--accent);
+  color: #1a1a1a;
+  border: none;
+}
+
+.controls { margin: 14px 0 8px; color: var(--muted); }
+
+#results { }
+.meta { color: var(--muted); font-size: 13px; }
+.tags { display: none; }
+.tag { display: none; }
+.table-wrap { margin-top: 12px; background: #fff; border-radius: 10px; border: 1px solid var(--border); overflow: hidden; }
+.lc-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.lc-table thead { background: #fafafa; }
+.lc-table th, .lc-table td { padding: 10px 12px; border-bottom: 1px solid rgba(148,163,184,0.12); text-align: left; vertical-align: middle; }
+.lc-table tbody tr:hover { background: #fff7e6; }
+.difficulty { display: inline-block; padding: 2px 8px; border-radius: 999px; border: 1px solid rgba(148,163,184,0.2); }
+.difficulty.Easy { color: #22c55e; border-color: rgba(34,197,94,0.35); }
+.difficulty.Medium { color: #eab308; border-color: rgba(234,179,8,0.35); }
+.difficulty.Hard { color: #ef4444; border-color: rgba(239,68,68,0.35); }
+.pagination { display: flex; gap: 10px; align-items: center; margin-top: 14px; }
+
+@media (min-width: 700px) { }
+
+
